@@ -20,7 +20,7 @@ const app = express();
 app.use(express.json());
 
 app.listen(4100, () => {
-  console.log("Server is running 3000!!");
+  console.log("Server is running 4100!!");
 });
 
 app.use("/api/user", userRoutes);
@@ -30,7 +30,7 @@ app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message||"Internal server error";
   res.status(statusCode).json({
-    sucsess: false,
+    success: false,
     statusCode,
     message
   })
